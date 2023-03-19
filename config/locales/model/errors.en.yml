@@ -1,0 +1,6 @@
+en:
+  model:
+    errors:
+      user:
+        name:
+          blank: 'Specify the name'

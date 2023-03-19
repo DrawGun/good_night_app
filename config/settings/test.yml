@@ -1,0 +1,3 @@
+db:
+  database: good_night_app_test
+  max_connections: 1

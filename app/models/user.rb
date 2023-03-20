@@ -1,4 +1,6 @@
 class User < Sequel::Model
+  one_to_many :sleep_periods
+
   def validate
     super
 

@@ -4,3 +4,6 @@ en:
       user:
         name:
           blank: 'Specify the name'
+      sleep_period:
+        wake_up:
+          less_than_fall_asleep: 'Must be after fall_asleep'

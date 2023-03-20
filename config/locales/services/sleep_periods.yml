@@ -1,0 +1,9 @@
+en:
+  services:
+    sleep_periods:
+      calculate_value_service:
+        empty_wake_up: 'Empty wake up'
+        same_value: 'Same value'
+      wake_up_service:
+        not_found: 'Not found'
+        already_exists: 'Already exists'

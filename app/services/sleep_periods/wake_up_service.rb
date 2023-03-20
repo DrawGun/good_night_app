@@ -9,7 +9,7 @@ module SleepPeriods
 
     def call
       return fail_t!(:not_found) if sleep_period.blank?
-      return fail_t!(:already_exists) if sleep_period.value.present?
+      return fail_t!(:already_exists) if sleep_period.wake_up.present?
 
       sleep_period.wake_up = data[:wake_up]
       calculate_value_service = SleepPeriods::CalculateValueService.call(sleep_period: sleep_period)

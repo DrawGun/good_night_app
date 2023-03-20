@@ -4,6 +4,9 @@ class SleepPeriod < Sequel::Model
   def validate
     super
 
-    errors.add(:wake_up, :less_than_fall_asleep) if wake_up.present? && wake_up < fall_asleep
+    if wake_up.present? && wake_up < fall_asleep
+      messages = I18n.t(:less_than_fall_asleep, scope: 'model.errors.sleep_period.wake_up')
+      errors.add(:wake_up, messages)
+    end
   end
 end

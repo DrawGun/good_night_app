@@ -12,7 +12,7 @@ module SleepPeriods
 
       @value = sleep_period.wake_up.to_i - sleep_period.fall_asleep.to_i
 
-      return fail_t!(:same_value) if sleep_period.value == value
+      fail_t!(:same_value) if sleep_period.value == value
     end
   end
 end

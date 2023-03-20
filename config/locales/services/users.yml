@@ -1,0 +1,5 @@
+en:
+  services:
+    users:
+      find_service:
+        not_found: 'Not found'

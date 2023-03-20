@@ -19,7 +19,7 @@ RSpec.describe SleepPeriods::WakeUpService do
 
   context 'invalid parameters' do
     it 'returns not_found error' do
-      result = subject.call(id: SleepPeriod.last.id + 100, data: data)
+      result = subject.call(id: SleepPeriod.last.id + 1000, data: data)
 
       expect(result.success?).to be_falsey
       expect(result.errors).to eq(['Not found'])

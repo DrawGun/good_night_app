@@ -1,4 +1,4 @@
-require_relative '../models/ad'
+require_relative '../models/user'
 
 User.destroy_all
 

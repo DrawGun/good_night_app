@@ -5,5 +5,13 @@ en:
         name:
           blank: 'Specify the name'
       sleep_period:
+        user_id:
+          blank: 'Specify the user_id'
         wake_up:
           less_than_fall_asleep: 'Must be after fall_asleep'
+      follower:
+        follower_id:
+          blank: 'Specify the follower_id'
+        followed_id:
+          blank: 'Specify the followed_id'
+

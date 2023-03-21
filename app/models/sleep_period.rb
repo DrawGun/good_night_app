@@ -9,4 +9,14 @@ class SleepPeriod < Sequel::Model
       errors.add(:wake_up, messages)
     end
   end
+
+  dataset_module do
+    def completed
+      exclude(wake_up: nil).exclude(value: nil)
+    end
+
+    def ordered
+      reverse_order(:created_at)
+    end
+  end
 end

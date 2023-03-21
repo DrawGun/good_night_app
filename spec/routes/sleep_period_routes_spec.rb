@@ -93,7 +93,7 @@ RSpec.describe SleepPeriodRoutes, type: :request do
 
         expect(sleep_period.reload.wake_up).to_not be_nil
         expect(sleep_period.reload.value).to eq(sleep_period.wake_up.to_i - sleep_period.fall_asleep.to_i)
-        expect(last_response.status).to eq(201)
+        expect(last_response.status).to eq(200)
       end
     end
   end

@@ -27,7 +27,7 @@ class SleepPeriodRoutes < Application
       if result.success?
         serializer = SleepPeriodSerializer.new(result.sleep_period.reload)
 
-        status 201
+        status 200
         json serializer.serializable_hash
       else
         status 422

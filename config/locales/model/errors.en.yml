@@ -9,9 +9,10 @@ en:
           blank: 'Specify the user_id'
         wake_up:
           less_than_fall_asleep: 'Must be after fall_asleep'
-      follower:
+      following:
         follower_id:
           blank: 'Specify the follower_id'
-        followed_id:
-          blank: 'Specify the followed_id'
+        followee_id:
+          blank: 'Specify the followee_id'
+          can_not_be_same_as_follower: 'Can not be same as the follower'
 

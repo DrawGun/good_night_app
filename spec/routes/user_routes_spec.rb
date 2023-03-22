@@ -54,4 +54,31 @@ RSpec.describe UserRoutes, type: :request do
       end
     end
   end
+
+  describe 'POST /v1/users/:user_id/follow' do
+    let(:user_one) { create(:user) }
+    let(:user_two) { create(:user) }
+
+    context 'missing parameters' do
+      it 'returns an error' do
+        post "/v1/users/#{user_one.id}/follow"
+
+        expect(last_response.status).to eq(422)
+      end
+    end
+
+    context 'valid parameters' do
+      let(:followings) do
+        {
+          followee_id: user_two.id.to_s
+        }
+      end
+
+      it 'returns correct response' do
+        post "/v1/users/#{user_one.id}/follow", followings: followings
+
+        expect(last_response.status).to eq(201)
+      end
+    end
+  end
 end

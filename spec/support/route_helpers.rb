@@ -1,6 +1,6 @@
 module RouteHelpers
   def app
-    described_class
+    Application.new
   end
 
   def response_body

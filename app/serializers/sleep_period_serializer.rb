@@ -1,7 +1,7 @@
 class SleepPeriodSerializer
   include FastJsonapi::ObjectSerializer
 
-  attributes :value, :created_at
+  attributes :value, :created_at, :user_id
 
   attributes :fall_asleep_info do |object|
     object.fall_asleep.strftime('%Y-%m-%d %H:%M')

@@ -1,2 +1,4 @@
 db:
   database: good_night_app_development
+pagination:
+  page_size: 5

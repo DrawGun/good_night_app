@@ -109,4 +109,18 @@ RSpec.describe UserRoutes, type: :request do
       end
     end
   end
+
+  describe 'GET /v1/users/:user_id/friends' do
+    let!(:following) { create(:following, follower: follower, followee: followee) }
+    let(:follower) { create(:user) }
+    let(:followee) { create(:user) }
+
+    context 'valid parameters' do
+      it 'returns correct response' do
+        get "/v1/users/#{follower.id}/friends"
+
+        expect(last_response.status).to eq(200)
+      end
+    end
+  end
 end

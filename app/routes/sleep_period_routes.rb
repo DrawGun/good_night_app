@@ -1,5 +1,5 @@
 class SleepPeriodRoutes < Application
-  namespace '/v1/sleep_periods' do
+  namespace '/' do
     post do
       sleep_period_params = validate_with!(SleepPeriods::CreateParamsContract)
 
@@ -15,8 +15,10 @@ class SleepPeriodRoutes < Application
         error_response result.errors || result.sleep_period
       end
     end
+  end
 
-    put '/:sleep_period_id/wake_up' do
+  namespace '/:sleep_period_id/wake_up' do
+    put do
       sleep_period_params = validate_with!(SleepPeriods::WakeUpParamsContract)
 
       result = SleepPeriods::WakeUpService.call(

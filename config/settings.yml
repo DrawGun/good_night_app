@@ -6,3 +6,6 @@ db:
   user: postgres
 pagination:
   page_size: 10
+logger:
+  path: log/app.log
+  level: info

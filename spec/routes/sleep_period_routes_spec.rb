@@ -5,7 +5,7 @@ RSpec.describe SleepPeriodRoutes, type: :request do
     context 'missing parameters' do
       it 'returns an error' do
         post '/v1/sleep_periods'
-
+        binding.pry
         expect(last_response.status).to eq(422)
       end
     end

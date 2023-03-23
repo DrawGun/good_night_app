@@ -1,7 +1,7 @@
 class User < Sequel::Model
   one_to_many :sleep_periods
-  one_to_many :followers, class: :Follower, key: :follower_id
-  one_to_many :followees, class: :Follower, key: :followee_id
+  one_to_many :followers, class: :Following, key: :followee_id
+  one_to_many :followees, class: :Following, key: :follower_id
 
   def validate
     super

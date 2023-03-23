@@ -22,6 +22,9 @@ gem 'dry-validation'
 gem 'activesupport', require: false
 gem 'fast_jsonapi'
 
+gem 'rack-ougai'
+gem 'rack-request-id'
+
 group :test do
   gem 'rspec'
   gem 'factory_bot'

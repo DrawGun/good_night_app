@@ -8,7 +8,8 @@ RSpec.describe SleepPeriodSerializer do
       value: sleep_period.value,
       fall_asleep_info: sleep_period.fall_asleep.strftime('%Y-%m-%d %H:%M'),
       wake_up_info: sleep_period.wake_up.strftime('%Y-%m-%d %H:%M'),
-      created_at: sleep_period.created_at
+      created_at: sleep_period.created_at,
+      user_id: sleep_period.user_id
     }
   end
 

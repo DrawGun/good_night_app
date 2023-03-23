@@ -4,3 +4,7 @@ en:
       follow_service:
         follower_is_not_found: 'Follower is not found'
         followee_is_not_found: 'Followee is not found'
+      unfollow_service:
+        follower_is_not_found: 'Follower is not found'
+        followee_is_not_found: 'Followee is not found'
+        following_is_not_found: 'Following is not found'

@@ -11,7 +11,7 @@ RSpec.describe SleepPeriods::CreateService do
       }
     }
 
-    it 'calculates value' do
+    it 'creates new SleepPeriod' do
       expect {
         subject.call(sleep_period_params: sleep_period_params)
       }.to change { SleepPeriod.count }.from(0).to(1)

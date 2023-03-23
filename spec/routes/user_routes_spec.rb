@@ -81,4 +81,32 @@ RSpec.describe UserRoutes, type: :request do
       end
     end
   end
+
+  describe 'DELETE /v1/users/:user_id/unfollow' do
+    let!(:following) { create(:following, follower: follower, followee: followee) }
+    let(:follower) { create(:user) }
+    let(:followee) { create(:user) }
+
+    context 'missing parameters' do
+      it 'returns an error' do
+        delete "/v1/users/#{follower.id}/unfollow"
+
+        expect(last_response.status).to eq(422)
+      end
+    end
+
+    context 'valid parameters' do
+      let(:followings) do
+        {
+          followee_id: followee.id.to_s
+        }
+      end
+
+      it 'returns correct response' do
+        delete "/v1/users/#{follower.id}/unfollow", followings: followings
+
+        expect(last_response.status).to eq(204)
+      end
+    end
+  end
 end

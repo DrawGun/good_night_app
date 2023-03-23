@@ -5,7 +5,7 @@ RSpec.describe Followings::FollowService do
   let!(:followee) { create(:user) }
 
   context 'valid parameters' do
-    it 'calculates value' do
+    it 'creates new Following' do
       expect {
         subject.call(
           follower_id: user.id,

@@ -53,6 +53,22 @@ class UserRoutes < Application
         end
       end
 
+      delete '/unfollow' do
+        unfollow_params = validate_with!(Followings::UnfollowParamsContract)
+
+        result = Followings::UnfollowService.call(
+          follower_id: unfollow_params[:user_id],
+          followee_id: unfollow_params[:followings][:followee_id]
+        )
+
+        if result.success?
+          status 204
+        else
+          status 422
+          error_response result.errors || result.following
+        end
+      end
+
 
       get 'friends' do
       end

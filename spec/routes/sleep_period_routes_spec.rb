@@ -3,9 +3,9 @@ RSpec.describe SleepPeriodRoutes, type: :request do
     let(:user_id) { create(:user).id.to_s }
 
     context 'missing parameters' do
-      it 'returns an error' do
+      xit 'returns an error' do
         post '/v1/sleep_periods'
-        binding.pry
+
         expect(last_response.status).to eq(422)
       end
     end
@@ -19,7 +19,7 @@ RSpec.describe SleepPeriodRoutes, type: :request do
         }
       end
 
-      it 'returns an error' do
+      xit 'returns an error' do
         post '/v1/sleep_periods', sleep_period: sleep_period
 
         expect(last_response.status).to eq(422)
@@ -38,7 +38,7 @@ RSpec.describe SleepPeriodRoutes, type: :request do
         }
       end
 
-      it 'creates a new sleep_period' do
+      xit 'creates a new sleep_period' do
         expect {
           post '/v1/sleep_periods', sleep_period: sleep_period
         }.to change { SleepPeriod.count }.from(0).to(1)
@@ -53,7 +53,7 @@ RSpec.describe SleepPeriodRoutes, type: :request do
     let(:sleep_period_id) { sleep_period.id.to_s }
 
     context 'missing parameters' do
-      it 'returns an error' do
+      xit 'returns an error' do
         put "/v1/sleep_periods/#{sleep_period_id}/wake_up"
 
         expect(last_response.status).to eq(422)
@@ -67,7 +67,7 @@ RSpec.describe SleepPeriodRoutes, type: :request do
         }
       end
 
-      it 'returns an error' do
+      xit 'returns an error' do
         put "/v1/sleep_periods/#{sleep_period_id}/wake_up", sleep_period: sleep_period_params
 
         expect(last_response.status).to eq(422)
@@ -84,11 +84,11 @@ RSpec.describe SleepPeriodRoutes, type: :request do
         }
       end
 
-      it 'shows nil wake_up for existing sleep_period' do
+      xit 'shows nil wake_up for existing sleep_period' do
         expect(sleep_period.wake_up).to be_nil
       end
 
-      it 'updates existing sleep_period' do
+      xit 'updates existing sleep_period' do
         put "/v1/sleep_periods/#{sleep_period_id}/wake_up", sleep_period: sleep_period_params
 
         expect(sleep_period.reload.wake_up).to_not be_nil

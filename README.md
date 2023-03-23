@@ -1,5 +1,11 @@
 # good_night_app
 
+## Models
+
+1. `User` - contains information about user.
+2. `SleepPeriod` - contains Clock In operations information.
+3. `Following` - contains follofers data and following logic.
+
 ## Endpoints
 
 1. Particular `User` info:

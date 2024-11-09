@@ -4,6 +4,7 @@ class SleepPeriod < Sequel::Model
   def validate
     super
 
+
     validates_presence :user_id, message: I18n.t(:blank, scope: 'model.errors.sleep_period.user_id')
 
     if wake_up.present? && wake_up < fall_asleep
